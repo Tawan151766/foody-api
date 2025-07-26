@@ -45,6 +45,12 @@ app.use((req, res, next) => {
   next();
 });
 
+
+// Health check or root path
+app.get('/', (req, res) => {
+  res.send('Server running');
+});
+
 app.use('/stores', storeRoutes);
 app.use('/menus', menuRoutes);
 app.use('/categories', categoryRoutes);
