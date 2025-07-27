@@ -11,6 +11,9 @@
     "nodemon": "^3.1.10"
   },
   "scripts": {
-    "start": "node src/index.js"
+    "start": "node src/index.js",
+    "migration:generate": "npx typeorm migration:generate -d ./src/db.js ./src/migration/AutoMigration",
+    "migration:run": "npx typeorm migration:run -d ./src/db.js",
+    "migration:revert": "npx typeorm migration:revert -d ./src/db.js"
   }
 }
